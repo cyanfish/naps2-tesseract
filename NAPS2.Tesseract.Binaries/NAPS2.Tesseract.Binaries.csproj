@@ -39,6 +39,18 @@
             <PackageCopyToOutput>true</PackageCopyToOutput>
             <PackagePath>contentFiles/_macarm</PackagePath>
         </None>
+        <None Include="..\artifacts\win-x64\tesseract.exe">
+            <Link>lib/win-x64/tesseract</Link>
+            <Pack>true</Pack>
+            <PackageCopyToOutput>true</PackageCopyToOutput>
+            <PackagePath>contentFiles/_win64</PackagePath>
+        </None>
+        <None Include="..\artifacts\win-x86\tesseract.exe">
+            <Link>lib/win-x86/tesseract</Link>
+            <Pack>true</Pack>
+            <PackageCopyToOutput>true</PackageCopyToOutput>
+            <PackagePath>contentFiles/_win32</PackagePath>
+        </None>
     </ItemGroup>
 
     <ItemGroup>

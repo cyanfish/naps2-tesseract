@@ -3,21 +3,35 @@
     <ItemGroup>
         <MacArmExe Include="$(MSBuildThisFileDirectory)\..\contentFiles\_macarm\tesseract" />
         <MacArmLibs Include="$(MSBuildThisFileDirectory)\..\contentFiles\_macarm\*.dylib" />
+        <Win64Exe Include="$(MSBuildThisFileDirectory)\..\contentFiles\_win64\tesseract.exe" />
+        <Win32Exe Include="$(MSBuildThisFileDirectory)\..\contentFiles\_win32\tesseract.exe" />
     </ItemGroup>
     <Target Name="CopyNativeDlls" BeforeTargets="BeforeCompile">
-        <Copy SourceFiles="@(MacArmExe)" DestinationFolder="$(IntermediateOutputPath)/lib" />
-        <Copy SourceFiles="@(MacArmLibs)" DestinationFolder="$(IntermediateOutputPath)/lib" />
+        <Copy SourceFiles="@(MacArmExe)" DestinationFolder="$(IntermediateOutputPath)/lib/_macarm" />
+        <Copy SourceFiles="@(MacArmLibs)" DestinationFolder="$(IntermediateOutputPath)/lib/_macarm" />
+        <Copy SourceFiles="@(Win64Exe)" DestinationFolder="$(IntermediateOutputPath)/lib/_win64" />
+        <Copy SourceFiles="@(Win32Exe)" DestinationFolder="$(IntermediateOutputPath)/lib/_win32" />
     </Target>
 
     <ItemGroup>
-        <Content Include="$(IntermediateOutputPath)/lib/tesseract"
+        <Content Include="$(IntermediateOutputPath)/lib/_macarm/tesseract"
                  Condition="$(RuntimeIdentifier) == 'osx-arm64' or (!$(TargetFramework.StartsWith('net4')) and $(RuntimeIdentifier) == '')">
             <Link>_macarm/tesseract</Link>
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </Content>
-        <Content Include="$(IntermediateOutputPath)/lib/*.dylib"
+        <Content Include="$(IntermediateOutputPath)/lib/_macarm/*.dylib"
                  Condition="$(RuntimeIdentifier) == 'osx-arm64' or (!$(TargetFramework.StartsWith('net4')) and $(RuntimeIdentifier) == '')">
             <Link>_macarm/%(Filename).dylib</Link>
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <Content Include="$(IntermediateOutputPath)/lib/_win64/tesseract.exe"
+                 Condition="$(RuntimeIdentifier) == 'win-x64' or $(RuntimeIdentifier) == ''">
+            <Link>_win64/tesseract.exe</Link>
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <Content Include="$(IntermediateOutputPath)/lib/_win32/tesseract.exe"
+                 Condition="$(RuntimeIdentifier) == 'win-x86' or $(RuntimeIdentifier) == ''">
+            <Link>_win32/tesseract.exe</Link>
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </Content>
     </ItemGroup>
