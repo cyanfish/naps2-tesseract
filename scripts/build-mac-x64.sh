@@ -20,6 +20,7 @@ popd
 
 # Note: Had to install Homebrew and leptonica x64 and uninstall leptonica arm64
 # See https://gist.github.com/progrium/b286cd8c82ce0825b2eb3b0b3a0720a0#homebrew
+# I also couldn't figure out how to successfully set CMAKE_SYSTEM_PROCESSOR so I manually changed it in CMakeLists.txt
 
 # TODO: Maybe build our own leptonica
 
