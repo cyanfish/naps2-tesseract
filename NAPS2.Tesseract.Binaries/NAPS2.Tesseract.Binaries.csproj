@@ -1,0 +1,50 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFrameworks>net462;netstandard2.0;net6.0</TargetFrameworks>
+        <RootNamespace>NAPS2.Tesseract.Binaries</RootNamespace>
+        <Title>NAPS2.Tesseract.Binaries</Title>
+        <Product>NAPS2.Tesseract.Binaries</Product>
+
+        <Version>0.1</Version>
+        <PackageVersion>0.1</PackageVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+
+        <Copyright>Copyright 2022 Ben Olden-Cooligan (note: tesseract has separate copyrights)</Copyright>
+        <LangVersion>10</LangVersion>
+        <Authors>Ben Olden-Cooligan</Authors>
+        <Description>Tesseract-OCR binaries for NAPS2.Sdk</Description>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <RepositoryUrl>https://github.com/cyanfish/naps2-tesseract</RepositoryUrl>
+        <PackageProjectUrl>https://github.com/cyanfish/naps2-tesseract</PackageProjectUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageTags>naps2 tesseract ocr</PackageTags>
+        <SignAssembly>true</SignAssembly>
+        <AssemblyOriginatorKeyFile>public_signing_key.snk</AssemblyOriginatorKeyFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Content Include="NAPS2.Tesseract.Binaries.targets" PackagePath="build/NAPS2.Tesseract.Binaries.targets" />
+        <None Include="..\artifacts\mac-arm64\*.dylib">
+            <Link>lib/mac-arm64/*.dylib</Link>
+            <Pack>true</Pack>
+            <PackageCopyToOutput>true</PackageCopyToOutput>
+            <PackagePath>contentFiles/_macarm</PackagePath>
+        </None>
+        <None Include="..\artifacts\mac-arm64\tesseract">
+            <Link>lib/mac-arm64/tesseract</Link>
+            <Pack>true</Pack>
+            <PackageCopyToOutput>true</PackageCopyToOutput>
+            <PackagePath>contentFiles/_macarm</PackagePath>
+        </None>
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Include="..\LICENSE" Pack="true" PackagePath="\" />
+        <None Include="..\README.md" Pack="true" PackagePath="\" />
+        <None Include="..\artifacts\tesseract-authors.txt" Pack="true" PackagePath="\" />
+    </ItemGroup>
+
+</Project>

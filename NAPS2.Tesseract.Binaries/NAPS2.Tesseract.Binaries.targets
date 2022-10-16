@@ -1,0 +1,25 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+    <ItemGroup>
+        <MacArmExe Include="$(MSBuildThisFileDirectory)\..\contentFiles\_macarm\tesseract" />
+        <MacArmLibs Include="$(MSBuildThisFileDirectory)\..\contentFiles\_macarm\*.dylib" />
+    </ItemGroup>
+    <Target Name="CopyNativeDlls" BeforeTargets="BeforeCompile">
+        <Copy SourceFiles="@(MacArmExe)" DestinationFolder="$(IntermediateOutputPath)/lib" />
+        <Copy SourceFiles="@(MacArmLibs)" DestinationFolder="$(IntermediateOutputPath)/lib" />
+    </Target>
+
+    <ItemGroup>
+        <Content Include="$(IntermediateOutputPath)/lib/tesseract"
+                 Condition="$(RuntimeIdentifier) == 'osx-arm64' or (!$(TargetFramework.StartsWith('net4')) and $(RuntimeIdentifier) == '')">
+            <Link>_macarm/tesseract</Link>
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <Content Include="$(IntermediateOutputPath)/lib/*.dylib"
+                 Condition="$(RuntimeIdentifier) == 'osx-arm64' or (!$(TargetFramework.StartsWith('net4')) and $(RuntimeIdentifier) == '')">
+            <Link>_macarm/%(Filename).dylib</Link>
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+    </ItemGroup>
+
+</Project>
