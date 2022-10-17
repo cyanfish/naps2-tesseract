@@ -9,6 +9,19 @@ ARTIFACTS_DIR="$BASE_DIR/artifacts"
 
 TARGET_DIR="$ARTIFACTS_DIR/mac-arm64"
 
+pushd "$SOURCES_DIR/leptonica"
+rm -rf build
+mkdir build
+pushd "build"
+cmake .. -G"Unix Makefiles" -DBUILD_SHARED_LIBS=OFF \
+    -DJPEG_LIBRARY="/opt/homebrew/lib/libjpeg.a" -DJPEG_INCLUDE_DIR="/opt/homebrew/include/" \
+    -DPNG_LIBRARY="/opt/homebrew/lib/libpng16.a" -DPNG_INCLUDE_DIR="/opt/homebrew/include/libpng16/" \
+    -DZLIB_LIBRARY="/opt/homebrew/opt/zlib/lib/libz.a" -DZLIB_INCLUDE_DIR="/opt/homebrew/opt/zlib/include/"
+cmake --build .
+sudo cmake --install .
+popd
+popd
+
 pushd "$SOURCES_DIR/tesseract"
 rm -rf build
 mkdir build
@@ -18,7 +31,7 @@ cmake --build .
 popd
 popd
 
-# TODO: Maybe build our own leptonica
+# Note: Had to manually remove gif, tiff, etc. (everything but jpeg/png/zlib) from leptonica CMakeLists
 
 cp "$SOURCES_DIR/tesseract/build/bin/tesseract" "$TARGET_DIR/tesseract"
 cp "$SOURCES_DIR/tesseract/AUTHORS" "$TARGET_DIR/../tesseract-authors.txt"

@@ -1,6 +1,8 @@
 [submodule "sources/tesseract"]
 	path = sources/tesseract
 	url = git@github.com:tesseract-ocr/tesseract.git
+	branch = 5.2.0
 [submodule "sources/leptonica"]
 	path = sources/leptonica
 	url = git@github.com:DanBloomberg/leptonica
+	branch = 1.82.0
