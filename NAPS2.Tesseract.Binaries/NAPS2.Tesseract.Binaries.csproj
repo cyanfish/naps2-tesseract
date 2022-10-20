@@ -6,8 +6,8 @@
         <Title>NAPS2.Tesseract.Binaries</Title>
         <Product>NAPS2.Tesseract.Binaries</Product>
 
-        <Version>0.2</Version>
-        <PackageVersion>0.2</PackageVersion>
+        <Version>0.3</Version>
+        <PackageVersion>0.3</PackageVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
 
         <Copyright>Copyright 2022 Ben Olden-Cooligan (note: tesseract has separate copyrights)</Copyright>
@@ -27,29 +27,23 @@
 
     <ItemGroup>
         <Content Include="NAPS2.Tesseract.Binaries.targets" PackagePath="build/NAPS2.Tesseract.Binaries.targets" />
-        <None Include="..\artifacts\mac-arm64\*.dylib">
-            <Link>lib/mac-arm64/*.dylib</Link>
-            <Pack>true</Pack>
-            <PackageCopyToOutput>true</PackageCopyToOutput>
-            <PackagePath>contentFiles/_macarm</PackagePath>
-        </None>
         <None Include="..\artifacts\mac-arm64\tesseract">
             <Link>lib/mac-arm64/tesseract</Link>
             <Pack>true</Pack>
             <PackageCopyToOutput>true</PackageCopyToOutput>
             <PackagePath>contentFiles/_macarm</PackagePath>
         </None>
-        <None Include="..\artifacts\mac-x64\*.dylib">
-            <Link>lib/mac-x64/*.dylib</Link>
-            <Pack>true</Pack>
-            <PackageCopyToOutput>true</PackageCopyToOutput>
-            <PackagePath>contentFiles/_mac</PackagePath>
-        </None>
         <None Include="..\artifacts\mac-x64\tesseract">
             <Link>lib/mac-x64/tesseract</Link>
             <Pack>true</Pack>
             <PackageCopyToOutput>true</PackageCopyToOutput>
             <PackagePath>contentFiles/_mac</PackagePath>
+        </None>
+        <None Include="..\artifacts\linux-x64\tesseract">
+            <Link>lib/linux-x64/tesseract</Link>
+            <Pack>true</Pack>
+            <PackageCopyToOutput>true</PackageCopyToOutput>
+            <PackagePath>contentFiles/_linux</PackagePath>
         </None>
         <None Include="..\artifacts\win-x64\tesseract.exe">
             <Link>lib/win-x64/tesseract</Link>

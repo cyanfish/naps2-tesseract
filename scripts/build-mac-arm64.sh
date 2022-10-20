@@ -26,12 +26,15 @@ pushd "$SOURCES_DIR/tesseract"
 rm -rf build
 mkdir build
 pushd "build"
-cmake .. -G"Unix Makefiles" -DDISABLED_LEGACY_ENGINE=ON -DBUILD_TRAINING_TOOLS=OFF -DBUILD_SHARED_LIBS=OFF -DDISABLE_CURL=ON -DDISABLE_ARCHIVE=ON -DGRAPHICS_DISABLED=ON -DENABLE_LTO=ON
+cmake .. -G"Unix Makefiles" \
+    -DDISABLED_LEGACY_ENGINE=ON -DBUILD_TRAINING_TOOLS=OFF -DBUILD_SHARED_LIBS=OFF \
+    -DDISABLE_CURL=ON -DDISABLE_ARCHIVE=ON -DGRAPHICS_DISABLED=ON -DENABLE_LTO=ON
 cmake --build .
 popd
 popd
 
 # Note: Had to manually remove gif, tiff, etc. (everything but jpeg/png/zlib) from leptonica CMakeLists
+# TODO: Use -DCMAKE_OSX_DEPLOYMENT_TARGET=10.15 for all builds
 
 cp "$SOURCES_DIR/tesseract/build/bin/tesseract" "$TARGET_DIR/tesseract"
 cp "$SOURCES_DIR/tesseract/AUTHORS" "$TARGET_DIR/../tesseract-authors.txt"
