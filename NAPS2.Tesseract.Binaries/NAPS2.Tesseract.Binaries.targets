@@ -17,12 +17,12 @@
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </Content>
         <Content Include="$(MSBuildThisFileDirectory)\..\contentFiles\_win64\tesseract.exe"
-                 Condition="$(RuntimeIdentifier) == 'win-x64' or $(RuntimeIdentifier) == ''">
+                 Condition="$(RuntimeIdentifier) == 'win-x64' or $(TargetFramework.StartsWith('net4')) or $(RuntimeIdentifier) == ''">
             <Link>_win64/tesseract.exe</Link>
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </Content>
         <Content Include="$(MSBuildThisFileDirectory)\..\contentFiles\_win32\tesseract.exe"
-                 Condition="$(RuntimeIdentifier) == 'win-x86' or $(RuntimeIdentifier) == ''">
+                 Condition="$(RuntimeIdentifier) == 'win-x86' or $(TargetFramework.StartsWith('net4')) or $(RuntimeIdentifier) == ''">
             <Link>_win32/tesseract.exe</Link>
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </Content>
