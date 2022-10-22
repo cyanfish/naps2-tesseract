@@ -6,3 +6,15 @@
 	path = sources/leptonica
 	url = git@github.com:DanBloomberg/leptonica
 	branch = 1.82.0
+[submodule "sources/libpng"]
+	path = sources/libpng
+	url = git@github.com:glennrp/libpng.git
+	branch = v1.6.38
+[submodule "sources/libjpeg-turbo"]
+	path = sources/libjpeg-turbo
+	url = git@github.com:libjpeg-turbo/libjpeg-turbo.git
+	branch = 2.1.4
+[submodule "sources/zlib"]
+	path = sources/zlib
+	url = git@github.com:madler/zlib.git
+	branch = v1.2.13

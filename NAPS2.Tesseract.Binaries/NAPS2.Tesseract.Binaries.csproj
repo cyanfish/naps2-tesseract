@@ -6,8 +6,8 @@
         <Title>NAPS2.Tesseract.Binaries</Title>
         <Product>NAPS2.Tesseract.Binaries</Product>
 
-        <Version>1.0.1</Version>
-        <PackageVersion>1.0.1</PackageVersion>
+        <Version>1.0.2</Version>
+        <PackageVersion>1.0.2</PackageVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
 
         <Copyright>Copyright 2022 Ben Olden-Cooligan (note: tesseract has separate copyrights)</Copyright>
