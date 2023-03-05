@@ -6,11 +6,11 @@
         <Title>NAPS2.Tesseract.Binaries</Title>
         <Product>NAPS2.Tesseract.Binaries</Product>
 
-        <Version>1.0.3</Version>
-        <PackageVersion>1.0.3</PackageVersion>
+        <Version>1.0.4</Version>
+        <PackageVersion>1.0.4</PackageVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
 
-        <Copyright>Copyright 2022 Ben Olden-Cooligan (note: tesseract has separate copyrights)</Copyright>
+        <Copyright>Copyright 2022-2023 Ben Olden-Cooligan (note: tesseract has separate copyrights)</Copyright>
         <LangVersion>10</LangVersion>
         <Authors>Ben Olden-Cooligan</Authors>
         <Description>Tesseract-OCR binaries for NAPS2.Sdk</Description>
