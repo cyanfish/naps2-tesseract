@@ -10,3 +10,4 @@ Supported platforms:
 - Mac 10.15+ arm64
 - Mac 10.15+ x64
 - Linux x64
+- Linux arm64

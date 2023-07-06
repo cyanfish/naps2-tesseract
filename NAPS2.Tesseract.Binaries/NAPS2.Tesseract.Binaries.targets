@@ -16,6 +16,11 @@
             <Link>_linux/tesseract</Link>
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </Content>
+        <Content Include="$(MSBuildThisFileDirectory)\..\contentFiles\_linuxarm\tesseract"
+                 Condition="$(RuntimeIdentifier) == 'linux-arm64' or (!$(TargetFramework.StartsWith('net4')) and !$(TargetFramework.Contains('macos')) and $(RuntimeIdentifier) == '')">
+            <Link>_linuxarm/tesseract</Link>
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
         <Content Include="$(MSBuildThisFileDirectory)\..\contentFiles\_win64\tesseract.exe"
                  Condition="$(RuntimeIdentifier) == 'win-x64' or $(TargetFramework.StartsWith('net4')) or ($(RuntimeIdentifier) == '' and !$(TargetFramework.Contains('macos')))">
             <Link>_win64/tesseract.exe</Link>
