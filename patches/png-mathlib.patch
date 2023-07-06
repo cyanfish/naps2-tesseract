@@ -1,0 +1,13 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 8652564b6..40a25fe93 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -54,7 +54,7 @@ endif()
+ if(UNIX AND NOT APPLE AND NOT BEOS AND NOT HAIKU AND NOT EMSCRIPTEN)
+   find_library(M_LIBRARY m)
+   if(NOT M_LIBRARY)
+-    set(M_LIBRARY "")
++    set(M_LIBRARY "m")
+   endif()
+ else()
+   # libm is not needed and/or not available.
