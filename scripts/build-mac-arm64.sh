@@ -32,7 +32,7 @@ rm -rf build
 mkdir build
 pushd "build"
 cmake .. -G"Unix Makefiles" -DBUILD_SHARED_LIBS=OFF -DCMAKE_OSX_DEPLOYMENT_TARGET=10.15 \
-    -DPNG_BUILD_ZLIB=ON -DZLIB_LIBRARIES="$( realpath "../../zlib/build/libz.a"; )"
+    -DZLIB_ROOT="$( realpath "../../zlib/build/"; )" -DZLIB_LIBRARIES="$( realpath "../../zlib/build/libz.a"; )"
 cmake --build .
 popd
 popd

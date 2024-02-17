@@ -34,7 +34,7 @@ rm -rf build
 mkdir build
 pushd "build"
 cmake .. -G"Unix Makefiles" -DBUILD_SHARED_LIBS=OFF \
-    -DPNG_BUILD_ZLIB=ON -DZLIB_LIBRARIES="$( realpath "../../zlib/build/libz.a"; )" \
+    -DZLIB_ROOT="$( realpath "../../zlib/build/"; )" -DZLIB_LIBRARIES="$( realpath "../../zlib/build/libz.a"; )" \
     -DZLIB_INCLUDE_DIRS="$( realpath "../../zlib/"; );$( realpath "../../zlib/build/"; )" \
     -DZLIB_INCLUDE_DIR="$( realpath "../../zlib/"; );$( realpath "../../zlib/build/"; )" \
     -DCMAKE_SYSTEM_NAME=Linux -DCMAKE_SYSTEM_PROCESSOR=aarch64 -DCMAKE_C_COMPILER=aarch64-linux-gnu-gcc -DCMAKE_CXX_COMPILER=aarch64-linux-gnu-g++
