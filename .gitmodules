@@ -1,20 +1,20 @@
 [submodule "sources/tesseract"]
 	path = sources/tesseract
 	url = https://github.com/tesseract-ocr/tesseract.git
-	branch = 5.2.0
+	branch = 5.3.4
 [submodule "sources/leptonica"]
 	path = sources/leptonica
 	url = https://github.com/DanBloomberg/leptonica
-	branch = 1.82.0
+	branch = 1.84.1
 [submodule "sources/libpng"]
 	path = sources/libpng
 	url = https://github.com/glennrp/libpng.git
-	branch = v1.6.38
+	branch = v1.6.42
 [submodule "sources/libjpeg-turbo"]
 	path = sources/libjpeg-turbo
 	url = https://github.com/libjpeg-turbo/libjpeg-turbo.git
-	branch = 2.1.4
+	branch = 2.1.5.1
 [submodule "sources/zlib"]
 	path = sources/zlib
 	url = https://github.com/madler/zlib.git
-	branch = v1.2.13
+	branch = v1.3.1
