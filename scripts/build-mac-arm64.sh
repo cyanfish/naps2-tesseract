@@ -62,8 +62,11 @@ cmake --build .
 popd
 popd
 
-# Note: Had to manually remove gif, tiff, etc. (everything but jpeg/png/zlib) from leptonica CMakeLists
-# Brew dependencies: cmake coreutils
+# Notes:
+# - Brew dependencies: cmake coreutils
+# - Have to run "sudo cmake --install ." in "sources/leptonica/build"
+# - It looks like zlib isn't picking up the right header, but I don't think it matters
+#   It seems like Leptonica_DIR isn't working for some reason, and macOS built-in zlib overrides us
 
 cp "$SOURCES_DIR/tesseract/build/bin/tesseract" "$TARGET_DIR/tesseract"
 cp "$SOURCES_DIR/tesseract/AUTHORS" "$TARGET_DIR/../tesseract-authors.txt"
