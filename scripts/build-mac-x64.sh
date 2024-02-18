@@ -72,8 +72,7 @@ popd
 # - Have to run "sudo cmake --install ." in "sources/leptonica/build"
 # - It looks like zlib isn't picking up the right header, but I don't think it matters
 # - It seems like Leptonica_DIR isn't working for some reason, and macOS built-in zlib overrides us
-# - I couldn't figure out how to successfully set CMAKE_SYSTEM_PROCESSOR so I manually changed it in Tesseract's
-#   CMakeLists.txt with tesseract-xcomplile.patch
+# - Cross-compiling doesn't seem to work on macOS 14 now, built on a 10.15 x64 VM instead
 
 cp "$SOURCES_DIR/tesseract/build/bin/tesseract" "$TARGET_DIR/tesseract"
 cp "$SOURCES_DIR/tesseract/AUTHORS" "$TARGET_DIR/../tesseract-authors.txt"
