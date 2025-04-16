@@ -31,6 +31,11 @@
             <Link>_win32/tesseract.exe</Link>
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </Content>
+        <Content Include="$(MSBuildThisFileDirectory)\..\contentFiles\_winarm\tesseract.exe"
+                 Condition="$(RuntimeIdentifier) == 'win-arm64' or $(TargetFramework.StartsWith('net4')) or ($(RuntimeIdentifier) == '' and !$(TargetFramework.Contains('macos')))">
+            <Link>_winarm/tesseract.exe</Link>
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
     </ItemGroup>
 
 </Project>

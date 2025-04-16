@@ -7,6 +7,7 @@ NAPS2.Tesseract.Binaries provides precompiled [Tesseract-OCR](https://github.com
 Supported platforms:
 - Windows 7+ x86
 - Windows 7+ x64
+- Windows 7+ arm64
 - Mac 10.15+ arm64
 - Mac 10.15+ x64
 - Linux x64
